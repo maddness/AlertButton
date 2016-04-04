@@ -72,7 +72,7 @@ def format_output((device_id, cell)):
 if __name__ == '__main__':
 
     if len(sys.argv) < 3:
-        print('Usage: spark-submit --master local --py-files objects.py spark_job.py <input hdfs file> <output hdfs file>')
+        print('Usage: spark-submit --master local --py-files objects.py spark_job.py <input_hdfs_file> <output_hdfs_file>')
         sys.exit(1)
 
     # this value should be related to real distance size, can tweak it to optimize performance
