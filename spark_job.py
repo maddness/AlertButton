@@ -78,8 +78,11 @@ if __name__ == '__main__':
     # this value should be related to real distance size, can tweak it to optimize performance
     cell_size = 100
 
+    # could increase/decrease number of partitions
+    partitions = 10
+
     sc = SparkContext("local", "Alert Button Job")
-    rdd = sc.textFile(sys.argv[1])
+    rdd = sc.textFile(sys.argv[1], partitions)
 
     home_coordinates = (rdd.map(prepare_alarms)
 
@@ -95,5 +98,5 @@ if __name__ == '__main__':
                         # prepare the final output
                         .map(format_output))
 
-    home_coordinates.saveAsTextFile(sys.argv[2])
+    home_coordinates.coalesce(1).saveAsTextFile(sys.argv[2])
     
