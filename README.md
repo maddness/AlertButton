@@ -2,7 +2,7 @@
 
 Исследование датасета и описание алгоритма - *dataset_investigation.ipynb*
 
-Запуск Spark скрипта:
+Запуск PySpark скрипта:
 
 ```sh 
 spark-submit --master local --py-files objects.py spark_job.py <input_hdfs_file> <output_hdfs_file>
