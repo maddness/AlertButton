@@ -51,7 +51,7 @@ def merge_combiners(cells1, cells2):
             cells2[key] += value
 
     cells1.update(cells2)
-    return cell1
+    return cells1
 
 
 # Picks a cell with highest number of night alarms.
