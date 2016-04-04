@@ -19,6 +19,12 @@ class Cell:
         self.sum_y += alarm.y
         self.count += 1
         self.night_count += 1 if alarm.is_night_time else 0
+
+    def add_cell(self, cell):
+        self.sum_x += cell.sum_x
+        self.sum_y += cell.sum_y
+        self.count += cell.count
+        self.night_count += cell.night_count
         
     def avg_coords(self):
         return (self.sum_x // self.count, self.sum_y // self.count, self.count, self.night_count)

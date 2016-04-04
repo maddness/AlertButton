@@ -46,9 +46,9 @@ def merge_value(cells, alarm):
 
 # Merges data from two accumulators into one.
 def merge_combiners(cells1, cells2):
-    for key, value in cells1:
+    for key, value in cells1.iteritems():
         if key in cells2:
-            cells2[key] += value
+            cells2[key].add_cell(value)
 
     cells1.update(cells2)
     return cells1
